@@ -51,6 +51,10 @@ module Api
             def company_params
                 params.require(:company).permit(:name, :image_url)
             end
+
+            def options
+                @options ||= { include: %i[reviews]}
+            end
         end
         
     end
